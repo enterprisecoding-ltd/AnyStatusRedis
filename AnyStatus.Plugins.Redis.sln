@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyStatus.Plugins.Redis", "AnyStatus.Plugins.Redis\AnyStatus.Plugins.Redis.csproj", "{4B60CF73-A3F5-4C74-96CD-544E90BC0823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyStatus.Plugins.RedisTests", "AnyStatus.Plugins.RedisTests\AnyStatus.Plugins.RedisTests.csproj", "{B45B9DCF-545A-419E-A550-AD086F60B861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B60CF73-A3F5-4C74-96CD-544E90BC0823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B60CF73-A3F5-4C74-96CD-544E90BC0823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B60CF73-A3F5-4C74-96CD-544E90BC0823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B60CF73-A3F5-4C74-96CD-544E90BC0823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45B9DCF-545A-419E-A550-AD086F60B861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45B9DCF-545A-419E-A550-AD086F60B861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45B9DCF-545A-419E-A550-AD086F60B861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45B9DCF-545A-419E-A550-AD086F60B861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53C087F8-A179-4C12-A5B0-C07F4005B6A2}
+	EndGlobalSection
+EndGlobal
