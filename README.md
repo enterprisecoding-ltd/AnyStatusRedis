@@ -5,7 +5,8 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 
 ### Avaliable Widgets
 
--  [x] Health Check
+-  [x] Client List
+-  [x] Database Size
 
 ## Contribute
 
