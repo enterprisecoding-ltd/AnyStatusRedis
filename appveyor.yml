@@ -1,0 +1,35 @@
+branches:
+  only:
+    - master
+
+version: 0.1.{build}
+
+image: Visual Studio 2019
+configuration: Release
+platform: Any CPU
+
+skip_commits:
+  files:
+    - '**/*.md'
+
+nuget:
+  account_feed: true
+  
+before_build:
+- cmd: nuget restore
+- ps: $file = "$env:appveyor_build_folder\AnyStatus.Plugins.Redis\AnyStatus.Plugins.Redis.nuspec"
+- ps: $xml = [xml](Get-Content $file)
+- ps: $xml.package.metadata.version = $env:APPVEYOR_BUILD_VERSION
+- ps: $xml.Save($file)
+
+build:
+  publish_nuget: true
+  verbosity: minimal
+
+test: off
+
+deploy:
+  provider: Environment
+  name: NuGet
+  on:
+    branch: master
