@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OpsPerSecond\OpsPerSecondHandler.cs" />
+    <Compile Include="OpsPerSecond\OpsPerSecondWidget.cs" />
     <Compile Include="EvictedKeys\EvictedKeysHandler.cs" />
     <Compile Include="EvictedKeys\EvictedKeysWidget.cs" />
     <Compile Include="KeyspaceMisses\KeyspaceMissesHandler.cs" />

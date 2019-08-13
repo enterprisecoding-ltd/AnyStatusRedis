@@ -22,6 +22,7 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 -  [x] Keyspace Expires Count
 -  [x] Keyspace Misses
 -  [x] Rejected Connections
+-  [x] Operations per Second
 
 ## Contribute
 
