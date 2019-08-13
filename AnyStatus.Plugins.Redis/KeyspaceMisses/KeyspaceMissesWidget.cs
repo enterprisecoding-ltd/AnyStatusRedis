@@ -3,34 +3,34 @@ using AnyStatus.Plugins.Redis.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnyStatus.Plugins.Redis.RejectedConnections
+namespace AnyStatus.Plugins.Redis.KeyspaceMisses
 {
-    [DisplayName("Rejected Connections")]
+    [DisplayName("Keyspace Misses")]
     [DisplayColumn("Redis")]
-    [Description("Shows the number of connections rejected due to hitting maxclient limit")]
-    public class RejectedConnectionsWidget : Sparkline, IRedisConnection, ISchedulable
+    [Description("Shows the number of failed lookups of keys")]
+    public class KeyspaceMissesWidget : Sparkline, IRedisConnection, ISchedulable
     {
         [Required]
-        [Category("Rejected Connections")]
+        [Category("Keyspace Misses")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
-        [Category("Rejected Connections")]
+        [Category("Keyspace Misses")]
         [Description("Redis password")]
         public string Password { get; set; }
 
         [Required]
-        [Category("Rejected Connections")]
+        [Category("Keyspace Misses")]
         [Description("connection timeout")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
-        [Category("Rejected Connections")]
+        [Category("Keyspace Misses")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
-        public RejectedConnectionsWidget() {
-            Name = "Rejected Connections";
+        public KeyspaceMissesWidget() {
+            Name = "Keyspace Misses";
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
         }

@@ -1,18 +1,18 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AnyStatus.API;
-using AnyStatus.Plugins.Redis.BlockedClients;
+using AnyStatus.Plugins.Redis.KeyspaceMisses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyStatus.Plugins.RedisTests
 {
     [TestClass]
-    public class BlockedClientsTests
+    public class KeyspaceMissesTests
     {
         [TestMethod]
-        public async Task BlockedClients()
+        public async Task KeyspaceMisses()
         {
-            var widget = new BlockedClientsWidget
+            var widget = new KeyspaceMissesWidget
             {
                 EndPoint = "127.0.0.1:6379",
                 Password = "abc1234"
@@ -20,7 +20,7 @@ namespace AnyStatus.Plugins.RedisTests
 
             var request = MetricQueryRequest.Create(widget);
 
-            var handler = new BlockedClientsHandler();
+            var handler = new KeyspaceMissesHandler();
 
             await handler.Handle(request, CancellationToken.None).ConfigureAwait(false);
 
