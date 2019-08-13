@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvictedKeys\EvictedKeysHandler.cs" />
+    <Compile Include="EvictedKeys\EvictedKeysWidget.cs" />
     <Compile Include="KeyspaceMisses\KeyspaceMissesHandler.cs" />
     <Compile Include="KeyspaceMisses\KeyspaceMissesWidget.cs" />
     <Compile Include="RejectedConnections\RejectedConnectionsHandler.cs" />

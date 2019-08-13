@@ -17,6 +17,7 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 -  [x] Total Commands Processed
 -  [x] Used Memory
 -  [x] Used Resident Set Size
+-  [x] Evicted Keys
 -  [x] Keyspace Key Count
 -  [x] Keyspace Expires Count
 -  [x] Keyspace Misses
