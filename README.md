@@ -19,6 +19,7 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 -  [x] Used Resident Set Size
 -  [x] Keyspace Key Count
 -  [x] Keyspace Expires Count
+-  [x] Rejected Connections
 
 ## Contribute
 
