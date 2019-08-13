@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyspaceKeysCountTests.cs" />
     <Compile Include="BlockedClientsTests.cs" />
     <Compile Include="TotalCommandsProcessedTests.cs" />
     <Compile Include="UsedResidentSetSizeTests.cs" />
