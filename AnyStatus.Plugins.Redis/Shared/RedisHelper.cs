@@ -1,9 +1,4 @@
 ﻿using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnyStatus.Plugins.Redis.Shared
 {
@@ -14,7 +9,9 @@ namespace AnyStatus.Plugins.Redis.Shared
             {
                 ConnectTimeout = redisConnection.ConnectionTimeout,
                 Ssl = redisConnection.EnableSSL,
-                AllowAdmin = true
+                AllowAdmin = true,
+                AbortOnConnectFail = false,
+                ConnectRetry = redisConnection.ConnectRetry
             };
 
 

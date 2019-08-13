@@ -17,13 +17,18 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
         public string EndPoint { get; set; }
 
         [Category("Used Memory")]
-        [Description("Redis password")]
+        [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
         [Category("Used Memory")]
-        [Description("connection timeout")]
+        [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
+
+        [Required]
+        [Category("Blocked Clients")]
+        [Description("The number of times to repeat connect attempts during initial Connect")]
+        public int ConnectRetry { get; set; }
 
         [Required]
         [Category("Used Memory")]
@@ -58,6 +63,7 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
             ErrorPercentage = 85;
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
+            ConnectRetry = 3;
         }
     }
 }

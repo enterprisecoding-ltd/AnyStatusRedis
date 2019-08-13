@@ -16,13 +16,18 @@ namespace AnyStatus.Plugins.Redis.OpsPerSecond
         public string EndPoint { get; set; }
 
         [Category("Operations Per second")]
-        [Description("Redis password")]
+        [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
         [Category("Operations Per second")]
-        [Description("connection timeout")]
+        [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
+
+        [Required]
+        [Category("Blocked Clients")]
+        [Description("The number of times to repeat connect attempts during initial Connect")]
+        public int ConnectRetry { get; set; }
 
         [Required]
         [Category("Operations Per second")]
@@ -33,6 +38,7 @@ namespace AnyStatus.Plugins.Redis.OpsPerSecond
             Name = "Operations Per second";
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
+            ConnectRetry = 3;
         }
     }
 }

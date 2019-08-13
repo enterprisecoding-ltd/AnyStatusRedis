@@ -16,7 +16,7 @@ namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
         public string EndPoint { get; set; }
 
         [Category("Keyspace Expires Count")]
-        [Description("Redis password")]
+        [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
@@ -26,8 +26,13 @@ namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
 
         [Required]
         [Category("Keyspace Expires Count")]
-        [Description("connection timeout")]
+        [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
+
+        [Required]
+        [Category("Blocked Clients")]
+        [Description("The number of times to repeat connect attempts during initial Connect")]
+        public int ConnectRetry { get; set; }
 
         [Required]
         [Category("Keyspace Expires Count")]
@@ -39,6 +44,7 @@ namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
             Database = 0;
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
+            ConnectRetry = 3;
         }
     }
 }
