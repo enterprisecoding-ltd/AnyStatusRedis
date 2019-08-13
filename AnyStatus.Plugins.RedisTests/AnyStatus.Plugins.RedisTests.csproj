@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TotalConnectionsReceivedTests.cs" />
+    <Compile Include="DatabaseCountTests.cs" />
     <Compile Include="DatabaseSizeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClientListTests.cs" />

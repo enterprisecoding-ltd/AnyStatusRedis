@@ -3,12 +3,12 @@ using AnyStatus.Plugins.Redis.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnyStatus.Plugins.Redis.DatabaseSize
+namespace AnyStatus.Plugins.Redis.DatabaseCount
 {
     [DisplayName("Database Size")]
     [DisplayColumn("Redis")]
     [Description("Shows the given redis database size")]
-    public class DatabaseSizeWidget : Metric, IRedisDatabaseConnection, ISchedulable
+    public class DatabaseCountWidget : Metric, IRedisDatabaseConnection, ISchedulable
     {
         [Required]
         [Category("Client List")]
@@ -34,7 +34,7 @@ namespace AnyStatus.Plugins.Redis.DatabaseSize
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
-        public DatabaseSizeWidget()
+        public DatabaseCountWidget()
         {
             Database = 0;
             ConnectionTimeout = 60 * 1000;

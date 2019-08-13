@@ -1,42 +1,37 @@
 ﻿using AnyStatus.API;
 using AnyStatus.Plugins.Redis.Shared;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnyStatus.Plugins.Redis.DatabaseSize
+namespace AnyStatus.Plugins.Redis.TotalConnectionsReceived
 {
-    [DisplayName("Database Size")]
+    [DisplayName("Total Connections Received")]
     [DisplayColumn("Redis")]
-    [Description("Shows the given redis database size")]
-    public class DatabaseSizeWidget : Metric, IRedisDatabaseConnection, ISchedulable
+    [Description("Shows the connected client list for Redis")]
+    public class TotalConnectionsReceivedWidget : Sparkline, IRedisConnection, ISchedulable
     {
         [Required]
-        [Category("Client List")]
+        [Category("Total Connections Received")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
-        [Category("Client List")]
+        [Category("Total Connections Received")]
         [Description("Redis password")]
         public string Password { get; set; }
 
         [Required]
-        [Category("Client List")]
-        [Description("Redis database")]
-        public int Database { get; set; }
-
-        [Required]
-        [Category("Client List")]
+        [Category("Total Connections Received")]
         [Description("connection timeout")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
-        [Category("Enable SSL")]
+        [Category("Client List")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
-        public DatabaseSizeWidget()
-        {
-            Database = 0;
+        public TotalConnectionsReceivedWidget() {
+            Name = "Total Connections Received";
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
         }
