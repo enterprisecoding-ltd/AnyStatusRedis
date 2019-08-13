@@ -9,7 +9,8 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 
 ### Avaliable Widgets
 
--  [x] Client List
+-  [x] Client Count
+-  [x] Blocked Client Count
 -  [x] Database Size
 -  [x] Database Count
 -  [x] Total Connections Received

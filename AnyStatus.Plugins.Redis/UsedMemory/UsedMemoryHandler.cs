@@ -11,10 +11,10 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
     {
         public async Task Handle(MetricQueryRequest<UsedMemoryWidget> request, CancellationToken cancellationToken)
         {
-            var clientListWidget = request.DataContext;
+            var usedMemoryWidget = request.DataContext;
 
-            var multiplexer = RedisHelper.GetConnectionMultiplexer(clientListWidget);
-            var redisServer = multiplexer.GetServer(clientListWidget.EndPoint);
+            var multiplexer = RedisHelper.GetConnectionMultiplexer(usedMemoryWidget);
+            var redisServer = multiplexer.GetServer(usedMemoryWidget.EndPoint);
 
             var info = await redisServer.InfoAsync("memory");
 

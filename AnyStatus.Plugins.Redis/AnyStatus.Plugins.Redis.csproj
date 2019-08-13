@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlockedClients\BlockedClientsHandler.cs" />
+    <Compile Include="BlockedClients\BlockedClientsWidget.cs" />
     <Compile Include="TotalCommandsProcessed\TotalCommandsProcessedHandler.cs" />
     <Compile Include="TotalCommandsProcessed\TotalCommandsProcessedWidget.cs" />
     <Compile Include="UsedResidentSetSize\UsedResidentSetSizeHandler.cs" />

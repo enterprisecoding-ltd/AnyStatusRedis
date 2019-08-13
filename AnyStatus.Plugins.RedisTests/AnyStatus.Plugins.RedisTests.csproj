@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlockedClientsTests.cs" />
     <Compile Include="TotalCommandsProcessedTests.cs" />
     <Compile Include="UsedResidentSetSizeTests.cs" />
     <Compile Include="UsedMemoryTests.cs" />

@@ -1,6 +1,5 @@
 ﻿using AnyStatus.API;
 using AnyStatus.Plugins.Redis.Shared;
-using StackExchange.Redis;
 using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,10 +10,10 @@ namespace AnyStatus.Plugins.Redis.TotalConnectionsReceived
     {
         public async Task Handle(MetricQueryRequest<TotalConnectionsReceivedWidget> request, CancellationToken cancellationToken)
         {
-            var clientListWidget = request.DataContext;
+            var totalConnectionsReceivedWidget = request.DataContext;
 
-            var multiplexer = RedisHelper.GetConnectionMultiplexer(clientListWidget);
-            var redisServer = multiplexer.GetServer(clientListWidget.EndPoint);
+            var multiplexer = RedisHelper.GetConnectionMultiplexer(totalConnectionsReceivedWidget);
+            var redisServer = multiplexer.GetServer(totalConnectionsReceivedWidget.EndPoint);
 
             var info = await redisServer.InfoAsync("stats");
 

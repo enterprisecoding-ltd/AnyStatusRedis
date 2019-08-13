@@ -11,10 +11,10 @@ namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
     {
         public async Task Handle(MetricQueryRequest<UsedResidentSetSizeWidget> request, CancellationToken cancellationToken)
         {
-            var clientListWidget = request.DataContext;
+            var usedResidentSetSizeWidget = request.DataContext;
 
-            var multiplexer = RedisHelper.GetConnectionMultiplexer(clientListWidget);
-            var redisServer = multiplexer.GetServer(clientListWidget.EndPoint);
+            var multiplexer = RedisHelper.GetConnectionMultiplexer(usedResidentSetSizeWidget);
+            var redisServer = multiplexer.GetServer(usedResidentSetSizeWidget.EndPoint);
 
             var info = await redisServer.InfoAsync("memory");
 

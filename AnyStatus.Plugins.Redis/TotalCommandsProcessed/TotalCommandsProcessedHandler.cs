@@ -10,10 +10,10 @@ namespace AnyStatus.Plugins.Redis.TotalCommandsProcessed
     {
         public async Task Handle(MetricQueryRequest<TotalCommandsProcessedWidget> request, CancellationToken cancellationToken)
         {
-            var clientListWidget = request.DataContext;
+            var totalCommandsProcessedWidget = request.DataContext;
 
-            var multiplexer = RedisHelper.GetConnectionMultiplexer(clientListWidget);
-            var redisServer = multiplexer.GetServer(clientListWidget.EndPoint);
+            var multiplexer = RedisHelper.GetConnectionMultiplexer(totalCommandsProcessedWidget);
+            var redisServer = multiplexer.GetServer(totalCommandsProcessedWidget.EndPoint);
 
             var info = await redisServer.InfoAsync("stats");
 
