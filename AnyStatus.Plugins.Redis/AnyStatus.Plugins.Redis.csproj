@@ -101,8 +101,8 @@
     <Compile Include="UsedMemory\UsedMemoryWidget.cs" />
     <Compile Include="TotalConnectionsReceived\TotalConnectionsReceivedHandler.cs" />
     <Compile Include="TotalConnectionsReceived\TotalConnectionsReceivedWidget.cs" />
-    <Compile Include="ClientList\ClientListHandler.cs" />
-    <Compile Include="ClientList\ClientListWidget.cs" />
+    <Compile Include="ClientCount\ClientCountHandler.cs" />
+    <Compile Include="ClientCount\ClientCountWidget.cs" />
     <Compile Include="DatabaseCount\DatabaseCountMetricQuery.cs" />
     <Compile Include="DatabaseCount\DatabaseCountWidget.cs" />
     <Compile Include="DatabaseSize\DatabaseSizeMetricQuery.cs" />

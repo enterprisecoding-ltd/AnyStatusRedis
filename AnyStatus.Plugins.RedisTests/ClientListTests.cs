@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AnyStatus.API;
-using AnyStatus.Plugins.Redis.ClientList;
+using AnyStatus.Plugins.Redis.ClientCount;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnyStatus.Plugins.RedisTests
@@ -13,14 +13,14 @@ namespace AnyStatus.Plugins.RedisTests
         [TestMethod]
         public async Task ClientList()
         {
-            var widget = new ClientListWidget {
+            var widget = new ClientCountWidget {
                 EndPoint = "127.0.0.1:6379",
                 Password = "abc1234"
             };
 
             var request = MetricQueryRequest.Create(widget);
 
-            var handler = new ClientListHandler();
+            var handler = new ClientCountHandler();
 
             await handler.Handle(request, CancellationToken.None).ConfigureAwait(false);
 

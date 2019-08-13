@@ -4,11 +4,11 @@ using StackExchange.Redis;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AnyStatus.Plugins.Redis.ClientList
+namespace AnyStatus.Plugins.Redis.ClientCount
 {
-    public class ClientListHandler : IRequestHandler<MetricQueryRequest<ClientListWidget>>
+    public class ClientCountHandler : IRequestHandler<MetricQueryRequest<ClientCountWidget>>
     {
-        public async Task Handle(MetricQueryRequest<ClientListWidget> request, CancellationToken cancellationToken)
+        public async Task Handle(MetricQueryRequest<ClientCountWidget> request, CancellationToken cancellationToken)
         {
             var clientListWidget = request.DataContext;
 
