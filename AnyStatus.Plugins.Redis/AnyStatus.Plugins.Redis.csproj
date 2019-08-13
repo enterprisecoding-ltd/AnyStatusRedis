@@ -93,6 +93,8 @@
   <ItemGroup>
     <Compile Include="TotalCommandsProcessed\TotalCommandsProcessedHandler.cs" />
     <Compile Include="TotalCommandsProcessed\TotalCommandsProcessedWidget.cs" />
+    <Compile Include="UsedMemory\UsedMemoryHandler.cs" />
+    <Compile Include="UsedMemory\UsedMemoryWidget.cs" />
     <Compile Include="TotalConnectionsReceived\TotalConnectionsReceivedHandler.cs" />
     <Compile Include="TotalConnectionsReceived\TotalConnectionsReceivedWidget.cs" />
     <Compile Include="ClientList\ClientListHandler.cs" />

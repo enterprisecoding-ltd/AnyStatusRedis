@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TotalCommandsProcessedTests.cs" />
+    <Compile Include="UsedMemoryTests.cs" />
     <Compile Include="TotalConnectionsReceivedTests.cs" />
     <Compile Include="DatabaseCountTests.cs" />
     <Compile Include="DatabaseSizeTests.cs" />
