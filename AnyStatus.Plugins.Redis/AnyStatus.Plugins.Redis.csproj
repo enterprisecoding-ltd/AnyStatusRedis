@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyspaceExpiresCount\KeyspaceExpiresCountHandler.cs" />
+    <Compile Include="KeyspaceExpiresCount\KeyspaceExpiresCountWidget.cs" />
     <Compile Include="KeyspaceKeysCount\KeyspaceKeysCountHandler.cs" />
     <Compile Include="KeyspaceKeysCount\KeyspaceKeysCountWidget.cs" />
     <Compile Include="BlockedClients\BlockedClientsHandler.cs" />
