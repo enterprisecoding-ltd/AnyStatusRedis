@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.ClientCount
     [DisplayName("Client Count")]
     [DisplayColumn("Redis")]
     [Description("Shows the connected Client Count for Redis")]
-    public class ClientCountWidget : Sparkline, IRedisConnection, ISchedulable
+    public class ClientCountWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Client Count")]

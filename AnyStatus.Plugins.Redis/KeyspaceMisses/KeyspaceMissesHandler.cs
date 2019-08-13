@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.KeyspaceMisses
 {
-    public class KeyspaceMissesHandler : IRequestHandler<MetricQueryRequest<KeyspaceMissesWidget>>
+    public class KeyspaceMissesHandler : IMetricQuery<KeyspaceMissesWidget>
     {
         public async Task Handle(MetricQueryRequest<KeyspaceMissesWidget> request, CancellationToken cancellationToken)
         {

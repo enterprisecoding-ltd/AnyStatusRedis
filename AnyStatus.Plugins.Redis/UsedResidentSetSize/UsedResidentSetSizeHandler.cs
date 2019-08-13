@@ -7,7 +7,7 @@ using System;
 
 namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
 {
-    public class UsedResidentSetSizeHandler : IRequestHandler<MetricQueryRequest<UsedResidentSetSizeWidget>>
+    public class UsedResidentSetSizeHandler : IMetricQuery<UsedResidentSetSizeWidget>
     {
         public async Task Handle(MetricQueryRequest<UsedResidentSetSizeWidget> request, CancellationToken cancellationToken)
         {

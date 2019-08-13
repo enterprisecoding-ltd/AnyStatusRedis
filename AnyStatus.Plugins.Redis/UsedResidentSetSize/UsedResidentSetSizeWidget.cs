@@ -9,7 +9,7 @@ namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
     [DisplayName("Used Resident Set Size")]
     [DisplayColumn("Redis")]
     [Description("Shows Resident Set Size used by Redis")]
-    public class UsedResidentSetSizeWidget : Sparkline, IRedisConnection, ISchedulable, IReportProgress
+    public class UsedResidentSetSizeWidget : Metric, IRedisConnection, ISchedulable, IReportProgress
     {
         [Required]
         [Category("Used Resident Set Size")]

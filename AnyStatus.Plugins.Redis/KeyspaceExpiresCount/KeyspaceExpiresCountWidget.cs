@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
     [DisplayName("Keyspace Expires Count")]
     [DisplayColumn("Redis")]
     [Description("Shows the total key count of given keyspace of Redis")]
-    public class KeyspaceExpiresCountWidget : Sparkline, IRedisConnection, ISchedulable
+    public class KeyspaceExpiresCountWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Keyspace Expires Count")]

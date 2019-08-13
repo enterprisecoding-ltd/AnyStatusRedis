@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.TotalConnectionsReceived
     [DisplayName("Total Connections Received")]
     [DisplayColumn("Redis")]
     [Description("Shows total connection received by Redis")]
-    public class TotalConnectionsReceivedWidget : Sparkline, IRedisConnection, ISchedulable
+    public class TotalConnectionsReceivedWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Total Connections Received")]

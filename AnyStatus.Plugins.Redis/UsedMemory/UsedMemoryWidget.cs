@@ -9,7 +9,7 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
     [DisplayName("Used Memory")]
     [DisplayColumn("Redis")]
     [Description("Amount of memory used by Redis")]
-    public class UsedMemoryWidget : Sparkline, IRedisConnection, ISchedulable, IReportProgress
+    public class UsedMemoryWidget : Metric, IRedisConnection, ISchedulable, IReportProgress
     {
         [Required]
         [Category("Used Memory")]

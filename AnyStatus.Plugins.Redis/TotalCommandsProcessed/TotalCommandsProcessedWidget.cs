@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.TotalCommandsProcessed
     [DisplayName("Total Commands Processed")]
     [DisplayColumn("Redis")]
     [Description("Shows total command processed by Redis")]
-    public class TotalCommandsProcessedWidget : Sparkline, IRedisConnection, ISchedulable
+    public class TotalCommandsProcessedWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Total Commands Processed")]

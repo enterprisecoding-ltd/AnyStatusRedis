@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnyStatus.Plugins.Redis.TotalConnectionsReceived
 {
-    public class TotalConnectionsReceivedHandler : IRequestHandler<MetricQueryRequest<TotalConnectionsReceivedWidget>>
+    public class TotalConnectionsReceivedHandler : IMetricQuery<TotalConnectionsReceivedWidget>
     {
         public async Task Handle(MetricQueryRequest<TotalConnectionsReceivedWidget> request, CancellationToken cancellationToken)
         {

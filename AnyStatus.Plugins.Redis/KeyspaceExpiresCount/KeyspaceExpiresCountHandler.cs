@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
 {
-    public class KeyspaceExpiresCountHandler : IRequestHandler<MetricQueryRequest<KeyspaceExpiresCountWidget>>
+    public class KeyspaceExpiresCountHandler : IMetricQuery<KeyspaceExpiresCountWidget>
     {
         public async Task Handle(MetricQueryRequest<KeyspaceExpiresCountWidget> request, CancellationToken cancellationToken)
         {

@@ -7,7 +7,7 @@ using System;
 
 namespace AnyStatus.Plugins.Redis.UsedMemory
 {
-    public class UsedMemoryHandler : IRequestHandler<MetricQueryRequest<UsedMemoryWidget>>
+    public class UsedMemoryHandler : IMetricQuery<UsedMemoryWidget>
     {
         public async Task Handle(MetricQueryRequest<UsedMemoryWidget> request, CancellationToken cancellationToken)
         {

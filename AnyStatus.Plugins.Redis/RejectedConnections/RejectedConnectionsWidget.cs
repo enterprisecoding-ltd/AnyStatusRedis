@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.RejectedConnections
     [DisplayName("Rejected Connections")]
     [DisplayColumn("Redis")]
     [Description("Shows the number of connections rejected due to hitting maxclient limit")]
-    public class RejectedConnectionsWidget : Sparkline, IRedisConnection, ISchedulable
+    public class RejectedConnectionsWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Rejected Connections")]

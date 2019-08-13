@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.KeyspaceMisses
     [DisplayName("Keyspace Misses")]
     [DisplayColumn("Redis")]
     [Description("Shows the number of failed lookups of keys")]
-    public class KeyspaceMissesWidget : Sparkline, IRedisConnection, ISchedulable
+    public class KeyspaceMissesWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Keyspace Misses")]

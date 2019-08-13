@@ -8,7 +8,7 @@ namespace AnyStatus.Plugins.Redis.OpsPerSecond
     [DisplayName("Operations Per second")]
     [DisplayColumn("Redis")]
     [Description("Total number of redis commands processed per second")]
-    public class OpsPerSecondWidget : Sparkline, IRedisConnection, ISchedulable
+    public class OpsPerSecondWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Operations Per second")]

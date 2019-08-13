@@ -25,8 +25,6 @@ namespace AnyStatus.Plugins.RedisTests
             await handler.Handle(request, CancellationToken.None).ConfigureAwait(false);
 
             Assert.AreEqual(State.Ok, widget.State);
-
-            Assert.IsTrue(widget.Value > 0);
         }
     }
 }
