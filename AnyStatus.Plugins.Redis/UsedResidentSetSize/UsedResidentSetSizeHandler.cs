@@ -5,11 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 
-namespace AnyStatus.Plugins.Redis.UsedMemory
+namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
 {
-    public class UsedMemoryHandler : IRequestHandler<MetricQueryRequest<UsedMemoryWidget>>
+    public class UsedResidentSetSizeHandler : IRequestHandler<MetricQueryRequest<UsedResidentSetSizeWidget>>
     {
-        public async Task Handle(MetricQueryRequest<UsedMemoryWidget> request, CancellationToken cancellationToken)
+        public async Task Handle(MetricQueryRequest<UsedResidentSetSizeWidget> request, CancellationToken cancellationToken)
         {
             var clientListWidget = request.DataContext;
 
@@ -18,15 +18,15 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
 
             var info = await redisServer.InfoAsync("memory");
 
-            var usedMemory = double.Parse(info[0].First(stat => stat.Key == "used_memory").Value);
+            var usedMemoryRss = double.Parse(info[0].First(stat => stat.Key == "used_memory_rss").Value);
             var totalSystemMemory = double.Parse(info[0].First(stat => stat.Key == "total_system_memory").Value);
-            var usedMemoryHuman = info[0].First(stat => stat.Key == "used_memory_human").Value;
+            var usedMemoryRssHuman = info[0].First(stat => stat.Key == "used_memory_rss_human").Value;
             var totalSystemMemoryHuman = info[0].First(stat => stat.Key == "total_system_memory_human").Value;
-            var percent = (int)Math.Round((usedMemory / (double)totalSystemMemory) * 100);
+            var percent = (int)Math.Round((usedMemoryRss / (double)totalSystemMemory) * 100);
 
             request.DataContext.Progress = percent;
             request.DataContext.Message = $"Used {percent}%{Environment.NewLine}" +
-                   $"{usedMemoryHuman} used out of {totalSystemMemoryHuman}";
+                   $"{usedMemoryRssHuman} used out of {totalSystemMemoryHuman}";
 
             request.DataContext.State = request.DataContext.Progress >= request.DataContext.ErrorPercentage ? State.Failed : State.Ok;
         }

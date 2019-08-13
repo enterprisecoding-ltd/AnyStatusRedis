@@ -15,6 +15,7 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 -  [x] Total Connections Received
 -  [x] Total Commands Processed
 -  [x] Used Memory
+-  [x] Used Resident Set Size
 
 ## Contribute
 
