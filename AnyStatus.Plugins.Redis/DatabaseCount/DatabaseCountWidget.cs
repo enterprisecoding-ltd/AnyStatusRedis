@@ -5,37 +5,38 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AnyStatus.Plugins.Redis.DatabaseCount
 {
-    [DisplayName("Database Size")]
+    [DisplayName("Database Count")]
     [DisplayColumn("Redis")]
-    [Description("Shows the given redis database size")]
+    [Description("Shows database size on Redis")]
     public class DatabaseCountWidget : Metric, IRedisDatabaseConnection, ISchedulable
     {
         [Required]
-        [Category("Client List")]
+        [Category("Database Count")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
-        [Category("Client List")]
+        [Category("Database Count")]
         [Description("Redis password")]
         public string Password { get; set; }
 
         [Required]
-        [Category("Client List")]
+        [Category("Database Count")]
         [Description("Redis database")]
         public int Database { get; set; }
 
         [Required]
-        [Category("Client List")]
+        [Category("Database Count")]
         [Description("connection timeout")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
-        [Category("Enable SSL")]
+        [Category("Database Count")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
         public DatabaseCountWidget()
         {
+            Name = "Database Count";
             Database = 0;
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;

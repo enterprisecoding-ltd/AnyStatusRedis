@@ -11,31 +11,32 @@ namespace AnyStatus.Plugins.Redis.DatabaseSize
     public class DatabaseSizeWidget : Metric, IRedisDatabaseConnection, ISchedulable
     {
         [Required]
-        [Category("Client List")]
+        [Category("Database Size")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
-        [Category("Client List")]
+        [Category("Database Size")]
         [Description("Redis password")]
         public string Password { get; set; }
 
         [Required]
-        [Category("Client List")]
+        [Category("Database Size")]
         [Description("Redis database")]
         public int Database { get; set; }
 
         [Required]
-        [Category("Client List")]
+        [Category("Database Size")]
         [Description("connection timeout")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
-        [Category("Enable SSL")]
+        [Category("Database Size")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
         public DatabaseSizeWidget()
         {
+            Name = "Database Size";
             Database = 0;
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
