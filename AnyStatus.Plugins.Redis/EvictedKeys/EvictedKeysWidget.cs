@@ -25,7 +25,7 @@ namespace AnyStatus.Plugins.Redis.EvictedKeys
     [DisplayName("Evicted Keys")]
     [DisplayColumn("Redis")]
     [Description("Number of keys removed due to reaching the maxmemory limit")]
-    public class EvictedKeysWidget : Metric, IRedisConnection, ISchedulable
+    public class EvictedKeysWidget : Sparkline, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Evicted Keys")]

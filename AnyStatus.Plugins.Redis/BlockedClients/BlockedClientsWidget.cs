@@ -25,7 +25,7 @@ namespace AnyStatus.Plugins.Redis.BlockedClients
     [DisplayName("Blocked Clients")]
     [DisplayColumn("Redis")]
     [Description("Clients blocked while waiting on BLPOP, BRPOP, or BRPOPLPUSH")]
-    public class BlockedClientsWidget : Metric, IRedisConnection, ISchedulable
+    public class BlockedClientsWidget : Sparkline, IRedisConnection, ISchedulable
     {
         [Required]
         [Category("Blocked Clients")]

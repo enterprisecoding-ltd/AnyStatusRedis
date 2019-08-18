@@ -23,7 +23,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.KeyspaceKeysCount
 {
-    public class KeyspaceKeysCountHandler : IMetricQuery<KeyspaceKeysCountWidget>
+    public class KeyspaceKeysCountHandler : IRequestHandler<MetricQueryRequest<KeyspaceKeysCountWidget>>
     {
         public async Task Handle(MetricQueryRequest<KeyspaceKeysCountWidget> request, CancellationToken cancellationToken)
         {

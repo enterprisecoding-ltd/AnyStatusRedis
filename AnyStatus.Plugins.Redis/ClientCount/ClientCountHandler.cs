@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace AnyStatus.Plugins.Redis.ClientCount
 {
-    public class ClientCountHandler : IMetricQuery<ClientCountWidget>
+    public class ClientCountHandler : IRequestHandler<MetricQueryRequest<ClientCountWidget>>
     {
         public async Task Handle(MetricQueryRequest<ClientCountWidget> request, CancellationToken cancellationToken)
         {

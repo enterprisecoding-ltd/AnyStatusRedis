@@ -23,7 +23,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.EvictedKeys
 {
-    public class EvictedKeysHandler : IMetricQuery<EvictedKeysWidget>
+    public class EvictedKeysHandler : IRequestHandler<MetricQueryRequest<EvictedKeysWidget>>
     {
         public async Task Handle(MetricQueryRequest<EvictedKeysWidget> request, CancellationToken cancellationToken)
         {

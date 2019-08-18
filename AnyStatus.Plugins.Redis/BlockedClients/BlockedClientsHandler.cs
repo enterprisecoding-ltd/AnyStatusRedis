@@ -23,7 +23,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.BlockedClients
 {
-    public class BlockedClientsHandler : IMetricQuery<BlockedClientsWidget>
+    public class BlockedClientsHandler : IRequestHandler<MetricQueryRequest<BlockedClientsWidget>>
     {
         public async Task Handle(MetricQueryRequest<BlockedClientsWidget> request, CancellationToken cancellationToken)
         {

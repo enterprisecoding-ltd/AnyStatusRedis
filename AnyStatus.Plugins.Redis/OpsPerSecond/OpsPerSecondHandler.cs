@@ -23,7 +23,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.OpsPerSecond
 {
-    public class OpsPerSecondHandler : IMetricQuery<OpsPerSecondWidget>
+    public class OpsPerSecondHandler : IRequestHandler<MetricQueryRequest<OpsPerSecondWidget>>
     {
         public async Task Handle(MetricQueryRequest<OpsPerSecondWidget> request, CancellationToken cancellationToken)
         {

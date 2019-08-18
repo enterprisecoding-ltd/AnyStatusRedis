@@ -23,7 +23,7 @@ using System.Linq;
 
 namespace AnyStatus.Plugins.Redis.RejectedConnections
 {
-    public class RejectedConnectionsHandler : IMetricQuery<RejectedConnectionsWidget>
+    public class RejectedConnectionsHandler : IRequestHandler<MetricQueryRequest<RejectedConnectionsWidget>>
     {
         public async Task Handle(MetricQueryRequest<RejectedConnectionsWidget> request, CancellationToken cancellationToken)
         {
