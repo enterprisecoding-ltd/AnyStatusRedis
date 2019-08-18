@@ -20,43 +20,54 @@ using AnyStatus.Plugins.Redis.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
 {
     [DisplayName("Used Resident Set Size")]
     [DisplayColumn("Redis")]
     [Description("Shows Resident Set Size used by Redis")]
-    public class UsedResidentSetSizeWidget : Metric, IRedisConnection, ISchedulable, IReportProgress
+    public class UsedResidentSetSizeWidget : Sparkline, IRedisConnection, ISchedulable, IReportProgress
     {
         [Required]
+        [PropertyOrder(10)]
         [Category("Used Resident Set Size")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
+        [PropertyOrder(30)]
         [Category("Used Resident Set Size")]
         [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
+        [PropertyOrder(40)]
         [Category("Used Resident Set Size")]
+        [DisplayName("Connection Timeout")]
         [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
+        [PropertyOrder(50)]
         [Category("Blocked Clients")]
+        [DisplayName("Connect Retry")]
         [Description("The number of times to repeat connect attempts during initial Connect")]
         public int ConnectRetry { get; set; }
 
         [Required]
+        [PropertyOrder(60)]
         [Category("Used Resident Set Size")]
+        [DisplayName("Enable SSL")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
+        [PropertyOrder(70)]
         [Category("Used Resident Set Size")]
         [DisplayName("Show progress bar")]
         [Description("Should the status show a bar displaying how full the drive is?")]
         public bool ShowProgress { get; set; } = true;
 
+        [PropertyOrder(20)]
         [Category("Used Resident Set Size")]
         [DisplayName("Error percentage")]
         [Description("At what percentage should this Node error?")]

@@ -24,7 +24,7 @@ using System;
 
 namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
 {
-    public class UsedResidentSetSizeHandler : IMetricQuery<UsedResidentSetSizeWidget>
+    public class UsedResidentSetSizeHandler : IRequestHandler<MetricQueryRequest<UsedResidentSetSizeWidget>>
     {
         public async Task Handle(MetricQueryRequest<UsedResidentSetSizeWidget> request, CancellationToken cancellationToken)
         {
@@ -44,6 +44,8 @@ namespace AnyStatus.Plugins.Redis.UsedResidentSetSize
             request.DataContext.Progress = percent;
             request.DataContext.Message = $"Used {percent}%{Environment.NewLine}" +
                    $"{usedMemoryRssHuman} used out of {totalSystemMemoryHuman}";
+
+            request.DataContext.Value = usedMemoryRss;
 
             request.DataContext.State = request.DataContext.Progress >= request.DataContext.ErrorPercentage ? State.Failed : State.Ok;
         }

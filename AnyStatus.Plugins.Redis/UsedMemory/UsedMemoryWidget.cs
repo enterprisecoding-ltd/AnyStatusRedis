@@ -20,43 +20,54 @@ using AnyStatus.Plugins.Redis.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace AnyStatus.Plugins.Redis.UsedMemory
 {
     [DisplayName("Used Memory")]
     [DisplayColumn("Redis")]
     [Description("Amount of memory used by Redis")]
-    public class UsedMemoryWidget : Metric, IRedisConnection, ISchedulable, IReportProgress
+    public class UsedMemoryWidget : Sparkline, IRedisConnection, ISchedulable, IReportProgress
     {
         [Required]
+        [PropertyOrder(10)]
         [Category("Used Memory")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
+        [PropertyOrder(30)]
         [Category("Used Memory")]
         [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
+        [PropertyOrder(40)]
         [Category("Used Memory")]
+        [DisplayName("Connection Timeout")]
         [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
+        [PropertyOrder(50)]
         [Category("Blocked Clients")]
+        [DisplayName("Connect Retry")]
         [Description("The number of times to repeat connect attempts during initial Connect")]
         public int ConnectRetry { get; set; }
 
         [Required]
+        [PropertyOrder(60)]
         [Category("Used Memory")]
+        [DisplayName("Enable SSL")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
+        [PropertyOrder(70)]
         [Category("Used Memory")]
         [DisplayName("Show progress bar")]
         [Description("Should the status show a bar displaying how full the drive is?")]
         public bool ShowProgress { get; set; } = true;
 
+        [PropertyOrder(20)]
         [Category("Used Memory")]
         [DisplayName("Error percentage")]
         [Description("At what percentage should this Node error?")]

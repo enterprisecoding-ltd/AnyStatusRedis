@@ -24,7 +24,7 @@ using System;
 
 namespace AnyStatus.Plugins.Redis.UsedMemory
 {
-    public class UsedMemoryHandler : IMetricQuery<UsedMemoryWidget>
+    public class UsedMemoryHandler : IRequestHandler<MetricQueryRequest<UsedMemoryWidget>>
     {
         public async Task Handle(MetricQueryRequest<UsedMemoryWidget> request, CancellationToken cancellationToken)
         {
@@ -44,6 +44,8 @@ namespace AnyStatus.Plugins.Redis.UsedMemory
             request.DataContext.Progress = percent;
             request.DataContext.Message = $"Used {percent}%{Environment.NewLine}" +
                    $"{usedMemoryHuman} used out of {totalSystemMemoryHuman}";
+
+            request.DataContext.Value = usedMemory;
 
             request.DataContext.State = request.DataContext.Progress >= request.DataContext.ErrorPercentage ? State.Failed : State.Ok;
         }

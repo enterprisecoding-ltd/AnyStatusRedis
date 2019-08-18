@@ -19,6 +19,7 @@ using AnyStatus.API;
 using AnyStatus.Plugins.Redis.Shared;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
 {
@@ -28,31 +29,40 @@ namespace AnyStatus.Plugins.Redis.KeyspaceExpiresCount
     public class KeyspaceExpiresCountWidget : Metric, IRedisConnection, ISchedulable
     {
         [Required]
+        [PropertyOrder(10)]
         [Category("Keyspace Expires Count")]
         [Description("Redis endpoint in host:port format")]
         public string EndPoint { get; set; }
 
+        [PropertyOrder(30)]
         [Category("Keyspace Expires Count")]
         [Description("Password for the redis server")]
         public string Password { get; set; }
 
         [Required]
+        [PropertyOrder(20)]
         [Category("Keyspace Expires Count")]
         [Description("Redis database")]
         public int Database { get; set; }
 
         [Required]
+        [PropertyOrder(40)]
         [Category("Keyspace Expires Count")]
+        [DisplayName("Connection Timeout")]
         [Description("Timeout (ms) for connect operations")]
         public int ConnectionTimeout { get; set; }
 
         [Required]
+        [PropertyOrder(50)]
         [Category("Blocked Clients")]
+        [DisplayName("Connect Retry")]
         [Description("The number of times to repeat connect attempts during initial Connect")]
         public int ConnectRetry { get; set; }
 
         [Required]
+        [PropertyOrder(60)]
         [Category("Keyspace Expires Count")]
+        [DisplayName("Enable SSL")]
         [Description("Enable ssl connection")]
         public bool EnableSSL { get; set; }
 
