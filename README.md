@@ -7,6 +7,8 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 
 ![Screenshot](https://raw.githubusercontent.com/fatihboy/AnyStatusRedis/master/docs/images/screenshot.png)
 
+As of AnyStatus 2.7, Redis plugin is distributed with official installer.
+
 ### Avaliable Widgets
 
 -  [x] Client Count
@@ -23,6 +25,7 @@ Widgets for AnyStatus to provide capability to check various Redis metrics.
 -  [x] Keyspace Misses
 -  [x] Rejected Connections
 -  [x] Operations per Second
+
 
 ## Contribute
 
