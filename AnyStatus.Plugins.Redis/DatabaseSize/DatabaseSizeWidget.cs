@@ -16,7 +16,9 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 using AnyStatus.API;
+using AnyStatus.API.Common.Utils;
 using AnyStatus.Plugins.Redis.Shared;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
@@ -26,7 +28,7 @@ namespace AnyStatus.Plugins.Redis.DatabaseSize
     [DisplayName("Database Size")]
     [DisplayColumn("Redis")]
     [Description("Shows the given redis database size")]
-    public class DatabaseSizeWidget : Metric, IRedisDatabaseConnection, ISchedulable
+    public class DatabaseSizeWidget : Sparkline, IRedisDatabaseConnection, ISchedulable
     {
         [Required]
         [PropertyOrder(10)]
@@ -73,6 +75,11 @@ namespace AnyStatus.Plugins.Redis.DatabaseSize
             ConnectionTimeout = 60 * 1000;
             EnableSSL = false;
             ConnectRetry = 3;
+        }
+
+        public override string ToString()
+        {
+            return BytesFormatter.Format(Convert.ToInt64(Value));
         }
     }
 }

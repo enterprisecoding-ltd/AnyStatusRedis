@@ -16,7 +16,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 using AnyStatus.API;
-using AnyStatus.Plugins.Redis.Helpers;
 using AnyStatus.Plugins.Redis.Shared;
 using System.Threading;
 using System.Threading.Tasks;

@@ -16,14 +16,13 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 using AnyStatus.API;
-using AnyStatus.Plugins.Redis.Helpers;
 using AnyStatus.Plugins.Redis.Shared;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AnyStatus.Plugins.Redis.DatabaseSize
 {
-    public class DatabaseSizeMetricQuery : IMetricQuery<DatabaseSizeWidget>
+    public class DatabaseSizeMetricQuery : IRequestHandler<MetricQueryRequest<DatabaseSizeWidget>>
     {
         public async Task Handle(MetricQueryRequest<DatabaseSizeWidget> request, CancellationToken cancellationToken)
         {
@@ -34,7 +33,7 @@ namespace AnyStatus.Plugins.Redis.DatabaseSize
 
             var databaseSize = await redisServer.DatabaseSizeAsync(database: databaseSizeWidget.Database);
 
-            request.DataContext.Value = SizeFormatter.FormatSize(databaseSize);
+            request.DataContext.Value = databaseSize;
             request.DataContext.State = State.Ok;
         }
     }
