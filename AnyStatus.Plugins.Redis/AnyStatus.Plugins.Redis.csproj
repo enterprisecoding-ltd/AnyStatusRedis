@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnyStatus.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b52fc05e377030a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\AnyStatus.API.2.0.128\lib\net462\AnyStatus.API.dll</HintPath>
+      <HintPath>..\packages\AnyStatus.API.2.0.133\lib\net462\AnyStatus.API.dll</HintPath>
     </Reference>
     <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
       <HintPath>..\packages\Pipelines.Sockets.Unofficial.2.0.22\lib\net461\Pipelines.Sockets.Unofficial.dll</HintPath>
@@ -119,7 +119,6 @@
     <Compile Include="DatabaseCount\DatabaseCountWidget.cs" />
     <Compile Include="DatabaseSize\DatabaseSizeMetricQuery.cs" />
     <Compile Include="DatabaseSize\DatabaseSizeWidget.cs" />
-    <Compile Include="Helpers\SizeFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\IRedisConnection.cs" />
     <Compile Include="Shared\IRedisDatabaseConnection.cs" />
